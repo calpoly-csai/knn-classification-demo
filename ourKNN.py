@@ -1,8 +1,6 @@
 import pandas as pd
 from model import knnModel
 
-
-#### SETUP
 # Import Data
 # CSV with sepal length, sepal width, petal length, petal width, and name
 data = pd.read_csv("iris.csv")
@@ -11,8 +9,6 @@ data = pd.read_csv("iris.csv")
 # This test data should eb classified as Iris-virginica
 testSet = [[7.2, 3.6, 5.1, 2.5]]
 test = pd.DataFrame(testSet)
-
-#### END SETUP
 
 
 #### Running our model
