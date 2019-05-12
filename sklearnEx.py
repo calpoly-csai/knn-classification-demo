@@ -11,7 +11,6 @@ testSet = [[7.2, 3.6, 5.1, 2.5]]
 test = pd.DataFrame(testSet)
 
 
-
 # Running KNN with scikit-learn
 print("Using scikit-learn...")
 neighbor = KNeighborsClassifier(n_neighbors=3)

@@ -9,13 +9,13 @@ import operator
 def euclideanDistance(p1, p2, size):
    distance = 0
 
-   for x in range(size):
-      distance += np.square(p1[x] - p2[x])
+   #### Part 1 - return euclidean distance between p1 and p2
 
-   return np.sqrt(distance)
+   #### End of Part 1
 
 # Defining our own KNN model
 def knnModel(trainingSet, testingSet, k):
+   # Initialize dictionaries
    distances = {}
    sort = {}
 
@@ -23,25 +23,24 @@ def knnModel(trainingSet, testingSet, k):
    # in this case, .shape[1] returns the # of columns
    length = testingSet.shape[1]
 
-   # Find euclidean distance between each row of training data and test data
-   for x in range(len(trainingSet)):
-      # pandas method to grab data by index
-      dist = euclideanDistance(testingSet, trainingSet.iloc[x], length)
-      
-      # Have to use array notation because numpy's sqrt function returns an array!
-      distances[x] = dist[0]
+   #### Part 2 - Find euclidean distance between each row of training data and test data
 
-   
-   # Sorts distances
-   # sorted() function takes in an interable object and key (way to sort the iterable object)
-   # operator.itemgetter(1) is a way to grab the first item from the iterable object
-   sorted_d = sorted(distances.items(), key=operator.itemgetter(1))
+
+      #### End of Part 2
+      
+
+   #### Part 3 - Sort distances
+
+   #### End of Part 3
+
 
    # Getting top k neighbors
    neighbors = []
 
-   for x in range(k):
-      neighbors.append(sorted_d[x][0])
+
+   #### Part 4 - Get top k neighbors
+
+   #### End of Part 4
 
    # Getting most frequent class in neighbors
    classVotes = {}
@@ -51,12 +50,10 @@ def knnModel(trainingSet, testingSet, k):
       # get class of each neighbor
       response = trainingSet.iloc[neighbors[x]][-1]
   
-      # if the class is already in the array, increment
-      if response in classVotes:
-         classVotes[response] += 1
-      # else add a new counter to the array
-      else:
-         classVotes[response] = 1
+      #### Part 5 - getting votes for each class
+
+      #### End of Part 5
+
 
       # set sortedVotes to the sorted classes with largest value first
       sortedVotes = sorted(classVotes.items(), key=operator.itemgetter(1), reverse=True)
