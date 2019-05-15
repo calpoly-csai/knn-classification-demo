@@ -1,5 +1,5 @@
 import pandas as pd
-from finished import knnModel
+from model import knnModel
 
 # Import Data
 # CSV with sepal length, sepal width, petal length, petal width, and name
