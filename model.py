@@ -5,8 +5,8 @@ import operator
 
 #### BUILDING YOUR OWN MODEL
 
-# Calculates euclidean distance between points
-def euclideanDistance(p1, p2, size):
+# Calculates euclidean distance between points in n dimensions
+def euclideanDistance(p1, p2, n):
    distance = 0
 
    #### Part 1 - return euclidean distance between p1 and p2
@@ -24,7 +24,6 @@ def knnModel(trainingSet, testingSet, k):
    length = testingSet.shape[1]
 
    #### Part 2 - Find euclidean distance between each row of training data and test data
-
 
       #### End of Part 2
       
@@ -44,7 +43,6 @@ def knnModel(trainingSet, testingSet, k):
 
    # Getting most frequent class in neighbors
    classVotes = {}
-
    # Iterate through top k neighbors
    for x in range(len(neighbors)):
       # get class of each neighbor
@@ -55,8 +53,8 @@ def knnModel(trainingSet, testingSet, k):
       #### End of Part 5
 
 
-      # set sortedVotes to the sorted classes with largest value first
-      sortedVotes = sorted(classVotes.items(), key=operator.itemgetter(1), reverse=True)
+   # set sortedVotes to the sorted classes with largest value first
+   sortedVotes = sorted(classVotes.items(), key=operator.itemgetter(1), reverse=True)
 
-      # return the the most voted class (the classification prediction!)
-      return(sortedVotes[0][0], neighbors)
+   # return the the most voted class (the classification prediction!)
+   return(sortedVotes[0][0], neighbors)
