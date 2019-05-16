@@ -15,9 +15,8 @@ def euclideanDistance(p1, p2, n):
 
 # Defining our own KNN model
 def knnModel(trainingSet, testingSet, k):
-   # Initialize dictionaries
+   # Initialize dictionary
    distances = {}
-   sort = {}
 
    # Note: "shape" is an attribute for numpy arrays, returning the dimensions of the array in the form n rows x m columns
    # in this case, .shape[1] returns the # of columns
